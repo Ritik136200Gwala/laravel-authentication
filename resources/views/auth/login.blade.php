@@ -4,6 +4,12 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
+        {{-- User Name --}}
+        <div class="mb-2">
+            <x-input-label for="username" :value="__('Username')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('username')" class="mt-2" />
+        </div>
 
         <!-- Email Address -->
         <div>
